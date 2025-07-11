@@ -4,14 +4,10 @@ import android.content.Context
 import android.os.Trace
 import android.util.Log
 import androidx.startup.Initializer
-import com.demo.androidstartup.InitProvider
 
 class StartupInitializer : Initializer<Unit> {
     override fun create(context: Context) {
         Log.d("startup_demo", "StartupInitializer onCreate()")
-        Thread{
-            InitProvider().onCreate()
-        }.start()
     }
 
     override fun dependencies(): List<Class<out Initializer<*>?>> {

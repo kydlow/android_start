@@ -1,5 +1,6 @@
 [versions]
 agp = "8.6.1"
+benchmarkMacroJunit4 = "1.3.4"
 kotlin = "1.9.0"
 coreKtx = "1.16.0"
 junit = "4.13.2"
@@ -8,10 +9,33 @@ espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.9.1"
 activityCompose = "1.10.1"
 composeBom = "2024.04.01"
+profileinstaller = "1.4.1"
 startupRuntime = "1.2.0"
+applovinSdk = "13.1.0"
+bidmachineAdapter = "3.3.0.0"
+billing = "7.0.0"
+bytedanceAdapter = "7.2.0.3.0"
+coilCompose = "2.4.0"
+kotlinxCoroutinesCore = "1.9.0"
+lottieCompose = "6.3.0"
+mmkv = "1.2.13"
+
+navigationCompose = "2.8.9"
+oguryPresageAdapter = "6.0.1.1"
+playServicesAds = "23.1.0"
+roomVersion = "2.6.1"
+toolsCore = "1.0.0-alpha13"
+unityadsAdapter = "4.15.0.1"
+cardview = "1.0.0"
+appcompat = "1.7.1"
+material = "1.12.0"
+uiautomator = "2.2.0"
+baselineprofile = "1.2.4"
 
 [libraries]
+androidx-benchmark-macro-junit4 = { module = "androidx.benchmark:benchmark-macro-junit4", version.ref = "benchmarkMacroJunit4" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-profileinstaller = { module = "androidx.profileinstaller:profileinstaller", version.ref = "profileinstaller" }
 androidx-startup-runtime = { module = "androidx.startup:startup-runtime", version.ref = "startupRuntime" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -26,8 +50,36 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomVersion" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomVersion" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomVersion" }
+applovin-sdk = { module = "com.applovin:applovin-sdk", version.ref = "applovinSdk" }
+bidmachine-adapter = { module = "com.applovin.mediation:bidmachine-adapter", version.ref = "bidmachineAdapter" }
+billing = { module = "com.android.billingclient:billing", version.ref = "billing" }
+bytedance-adapter = { module = "com.applovin.mediation:bytedance-adapter", version.ref = "bytedanceAdapter" }
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
+coil-gif = { module = "io.coil-kt:coil-gif", version.ref = "coilCompose" }
+
+#---------------MMKV------------------
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCore" }
+lottie-compose = { module = "com.airbnb.android:lottie-compose", version.ref = "lottieCompose" }
+mmkv = { group = "com.tencent", name = "mmkv", version.ref = "mmkv" }
+androidx-tools-core = { group = "androidx.privacysandbox.tools", name = "tools-core", version.ref = "toolsCore" }
+ogury-presage-adapter = { module = "com.applovin.mediation:ogury-presage-adapter", version.ref = "oguryPresageAdapter" }
+play-services-ads = { module = "com.google.android.gms:play-services-ads", version.ref = "playServicesAds" }
+unityads-adapter = { module = "com.applovin.mediation:unityads-adapter", version.ref = "unityadsAdapter" }
+verve-adapter = { module = "com.applovin.mediation:verve-adapter", version.ref = "bidmachineAdapter" }
+androidx-cardview = { group = "androidx.cardview", name = "cardview", version.ref = "cardview" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-uiautomator = { group = "androidx.test.uiautomator", name = "uiautomator", version.ref = "uiautomator" }
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+android-test = { id = "com.android.test", version.ref = "agp" }
+baselineprofile = { id = "androidx.baselineprofile", version.ref = "baselineprofile" }
 

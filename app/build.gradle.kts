@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("com.google.devtools.ksp")
+    id("org.lsposed.lsparanoid")
+    alias(libs.plugins.baselineprofile)
 }
 
 android {
@@ -47,7 +50,9 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+
 }
+
 
 dependencies {
 
@@ -64,8 +69,53 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
+    "baselineProfile"(project(":baselineprofileTest"))
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    implementation (libs.androidx.startup.runtime)
+    // Room
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
+
+//    implementation (libs.androidx.startup.runtime)
+
+    // Macrobenchmark 库用于生成 Baseline Profile
+    androidTestImplementation(libs.androidx.benchmark.macro.junit4)
+//    // Profile Installer 库用于安装 Baseline Profile
+    implementation (libs.androidx.profileinstaller)
+
+
+    implementation (libs.lottie.compose)
+
+    implementation (libs.applovin.sdk)
+    implementation(libs.play.services.ads) // Admob ads
+
+//    //max聚合
+    implementation(libs.bidmachine.adapter)//BidMachine
+    implementation(libs.ogury.presage.adapter)//Ogury
+    implementation(libs.bytedance.adapter)//Pangle
+    implementation(libs.unityads.adapter)//Unity Ads
+    implementation(libs.verve.adapter)//Verve
+
+    implementation ("org.jetbrains.kotlin:kotlin-stdlib:1.9.0")
+    implementation("androidx.work:work-runtime:2.7.0")
+    implementation("com.google.code.gson:gson:2.8.5")
+    implementation("androidx.appcompat:appcompat:1.3.0")
+
+
+    implementation("io.reactivex.rxjava3:rxjava:3.0.0")
+    implementation("io.reactivex.rxjava3:rxandroid:3.0.0")
+    implementation("io.reactivex.rxjava3:rxkotlin:3.0.0")
+
+    implementation("com.squareup.okhttp3:okhttp:4.8.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.8.0") // 配置缓存策略
+    // Retrofit适配RxJava
+    implementation("com.squareup.retrofit2:adapter-rxjava3:2.9.0")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.retrofit2:converter-scalars:2.9.0")
+    implementation("com.android.installreferrer:installreferrer:2.2") // Google 买量回调
+    implementation("com.google.android.gms:play-services-ads-identifier:18.0.1") //
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.9.0")
 }
